@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    public float viewAngle;
     public List<Transform> patrolPonts;
     public PlayerController player;
     private NavMeshAgent _navMeshAgent;
@@ -20,29 +21,10 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        var direction = player.transform.position - transform.position;
 
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position + Vector3.up, direction, out hit))
-        {
-            if(hit.collider.gameObject == player.gameObject)
-            {
-                _isPlayerNoticed = true;
-            }
-            else
-            {
-                _isPlayerNoticed = false;
-            }
-        }
-        else
-        {
-            _isPlayerNoticed = false;
-        }
-
-       if (_navMeshAgent.remainingDistance ==0 )
-        {
-            PickNewPatrolPoint();
-        }
+        NoticePlayerUpdate();
+        ChaseUpdate();
+        PatrolUpdate();
     }
 
     private void PickNewPatrolPoint()
@@ -54,4 +36,43 @@ public class EnemyAI : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
+
+    private void PatrolUpdate()
+    {
+        if (!_isPlayerNoticed)
+        {
+            if (_navMeshAgent.remainingDistance == 0)
+            {
+                PickNewPatrolPoint();
+            }
+        }
+    }
+
+    private void NoticePlayerUpdate()
+    {
+        var direction = player.transform.position - transform.position;
+        _isPlayerNoticed = false;
+        if (Vector3.Angle(transform.forward, direction) < viewAngle)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + Vector3.up, direction, out hit))
+            {
+                if (hit.collider.gameObject == player.gameObject)
+                {
+                    _isPlayerNoticed = true;
+                }
+            }
+        }
+    }
+
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            _navMeshAgent.destination = player.transform.position;
+        }
+
+    }
 }
+
+

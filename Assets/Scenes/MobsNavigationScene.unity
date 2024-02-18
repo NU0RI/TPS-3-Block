@@ -1660,6 +1660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e411cc6d3d2ecd945842ebd0c2858a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewAngle: 65
   patrolPonts:
   - {fileID: 1974578689}
   - {fileID: 950071061}
