@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2218560318331188494}
   - component: {fileID: 2218560318331188491}
   - component: {fileID: 2218560318331188488}
+  - component: {fileID: 6336272871673717611}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,6 +147,7 @@ Transform:
   m_Children:
   - {fileID: 2218560317923939622}
   - {fileID: 1820388455271467870}
+  - {fileID: 3342342002677333669}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraAxisTransform: {fileID: 2218560317923939622}
   minAngle: -25
-  maxAngle: 20
+  maxAngle: 30
   RotationSpeed: 600
 --- !u!114 &2218560318331188491
 MonoBehaviour:
@@ -198,6 +200,50 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &6336272871673717611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218560318331188495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362b41da3a438f846b69de8f8d16dd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 1172704288, guid: faabb724bc8609c4b9a36c07e20f584a, type: 3}
+  BulletSourceTransform: {fileID: 3342342002677333669}
+--- !u!1 &6966636007739022069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3342342002677333669}
+  m_Layer: 0
+  m_Name: Bullet Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3342342002677333669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966636007739022069}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2218560318331188489}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2218560317729860789
 PrefabInstance:
   m_ObjectHideFlags: 0

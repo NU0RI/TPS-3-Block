@@ -5,10 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed;
+    public float lifetime;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Invoke("DestroyBullet", lifetime);
     }
 
     // Update is called once per frame
@@ -19,10 +20,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        DestroyBullet();
     }
     private void MoveFixedUpdate()
     {
-        transform.position += transform.forward * -Speed * Time.fixedDeltaTime;
+        transform.position += transform.forward * Speed * Time.fixedDeltaTime;
+    }
+    private void DestroyBullet()
+    {
+        Destroy(gameObject);
     }
 }
