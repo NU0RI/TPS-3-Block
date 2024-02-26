@@ -2021,6 +2021,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6336272871673717611, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb,
+        type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 1172704288, guid: faabb724bc8609c4b9a36c07e20f584a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb, type: 3}
 --- !u!1 &2124823654
