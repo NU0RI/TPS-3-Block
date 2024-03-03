@@ -9,9 +9,10 @@ public class BulletSource : MonoBehaviour
     public float targetInSkyDistance;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
