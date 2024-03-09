@@ -8,13 +8,11 @@ public class Bullet : MonoBehaviour
     public float lifetime;
     public float damage = 10;
 
-    // Start is called before the first frame update
     private void Start()
     {
         Invoke("DestroyBullet", lifetime);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         MoveFixedUpdate();

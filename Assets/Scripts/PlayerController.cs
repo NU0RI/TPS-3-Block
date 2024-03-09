@@ -15,13 +15,11 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    // Start is called before the first frame update
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         _characterController.Move(_moveVector * Time.fixedDeltaTime * speed);

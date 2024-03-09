@@ -8,20 +8,21 @@ public class EnemyAI : MonoBehaviour
     public float viewAngle;
     public List<Transform> patrolPonts;
     public PlayerController player;
-    public float damage = 30;
+    public float damage = 20;
+    public float attackDistanse = 1;
 
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
     private PlayerHealth _playerHealth;
 
-    // Start is called before the first frame update
+    public Animator animator;
+
     void Start()
     {
         InitComponentLinks();
         PickNewPatrolPoint();
     }
 
-    // Update is called once per frame
     private void Update()
     {
 
@@ -55,8 +56,10 @@ public class EnemyAI : MonoBehaviour
 
     private void NoticePlayerUpdate()
     {
-        var direction = player.transform.position - transform.position;
         _isPlayerNoticed = false;
+        if (!_playerHealth.IsAlive()) return;
+        var direction = player.transform.position - transform.position;
+
         if (Vector3.Angle(transform.forward, direction) < viewAngle)
         {
             RaycastHit hit;
@@ -85,9 +88,17 @@ public class EnemyAI : MonoBehaviour
         {
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
-                _playerHealth.DealDamage(damage * Time.deltaTime);
+                animator.SetTrigger("Attack");
             }
         }
+    }
+
+    public void AttackDamage()
+    {
+        if (!_isPlayerNoticed) return;
+        if (_navMeshAgent.remainingDistance > (_navMeshAgent.stoppingDistance + attackDistanse)) return;
+
+        _playerHealth.DealDamage(damage);
     }
 }
 

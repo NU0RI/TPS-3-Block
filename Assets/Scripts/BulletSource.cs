@@ -8,14 +8,12 @@ public class BulletSource : MonoBehaviour
     public Camera cameraLink;
     public float targetInSkyDistance;
 
-    // Start is called before the first frame update
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         var ray = cameraLink.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
