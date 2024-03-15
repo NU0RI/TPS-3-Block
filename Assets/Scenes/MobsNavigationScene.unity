@@ -2122,6 +2122,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2444881724288558966, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb,
+        type: 3}
+      propertyPath: levels.Array.data[0].BulletDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2444881724288558966, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb,
+        type: 3}
+      propertyPath: levels.Array.data[1].BulletDamage
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2618443821026923356, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
