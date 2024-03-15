@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    private float damage = 50;
+    public float damage = 50;
     private float maxSize = 5;
-    private float speed = 3;
+    private float speed = 10;
     private void Start()
     {
         transform.localScale = Vector3.zero;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletCaster : MonoBehaviour
 {
+    public float damage = 10;
+
     public Bullet BulletPrefab;
     public Transform BulletSourceTransform;
 
@@ -11,7 +13,8 @@ public class BulletCaster : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(BulletPrefab, BulletSourceTransform.position, BulletSourceTransform.rotation);
+            var Bullet = Instantiate(BulletPrefab, BulletSourceTransform.position, BulletSourceTransform.rotation);
+            Bullet.damage = damage;
         }
     }
 }

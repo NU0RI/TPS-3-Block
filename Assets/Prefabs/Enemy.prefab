@@ -70,10 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewAngle: 65
-  patrolPonts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  patrolPonts: []
   player: {fileID: 2218560318331188491, guid: 3eb00e74cd7f1454c9d6803fcbad4bdb, type: 3}
   damage: 10
   attackDistanse: 0.5
