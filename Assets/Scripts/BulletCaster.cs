@@ -8,13 +8,20 @@ public class BulletCaster : MonoBehaviour
 
     public Bullet BulletPrefab;
     public Transform BulletSourceTransform;
-
+    
+    public AudioSource AudioSource;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             var Bullet = Instantiate(BulletPrefab, BulletSourceTransform.position, BulletSourceTransform.rotation);
             Bullet.damage = damage;
+            AudioSource.Play();
         }
+    }
+
+    private void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
     }
 }
