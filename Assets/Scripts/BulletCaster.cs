@@ -8,9 +8,13 @@ public class BulletCaster : MonoBehaviour
 
     public Bullet BulletPrefab;
     public Transform BulletSourceTransform;
-    
     public AudioSource AudioSource;
     private void Update()
+    {
+        Caster();
+    }
+
+    public void Caster()
     {
         if (Input.GetMouseButtonDown(0))
         {

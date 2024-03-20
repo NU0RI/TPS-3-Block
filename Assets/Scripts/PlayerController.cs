@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     public float speed;
-
     void Start()
     {
         _characterController = GetComponent<CharacterController>();

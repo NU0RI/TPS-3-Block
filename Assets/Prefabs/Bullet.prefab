@@ -141,6 +141,7 @@ MonoBehaviour:
   Speed: 10
   lifetime: 3
   damage: 10
+  AudioSource: {fileID: 1016023411266158276}
 --- !u!1001 &654060386910769254
 PrefabInstance:
   m_ObjectHideFlags: 0

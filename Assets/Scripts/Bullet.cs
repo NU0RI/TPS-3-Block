@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour
     public float Speed;
     public float lifetime;
     public float damage = 10;
-  
+    private bool Caster;
+
     private void Start()
     {
         Invoke("DestroyBullet", lifetime);

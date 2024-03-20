@@ -6,7 +6,7 @@ public class BulletSource : MonoBehaviour
 {
     public Transform TargetPoint;
     public Camera cameraLink;
-    public float targetInSkyDistance;
+    public float targetInSkyDistance;   
 
     private void Start()
     {
