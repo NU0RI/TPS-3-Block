@@ -6,7 +6,7 @@ public class VolumeValue : MonoBehaviour
 {
     private AudioSource AudioSource;
 
-    private float _ValueMusic = 1f;
+    private float _ValueMusic = 0.15f;
 
     private void Start()
     {

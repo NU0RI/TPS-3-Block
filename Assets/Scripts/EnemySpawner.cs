@@ -46,16 +46,16 @@ public class EnemySpawner : MonoBehaviour
 
     private void CreateEnemy()
     {
-
         if (_enemies.Count >= enimesMaxCount) return;
         if (Time.time - _timeLastSpawned < delay) return;
 
         var enemy = Instantiate(enemyPrefab);
         enemy.transform.position = _spawnerPoints[Random.Range(0, _spawnerPoints.Count)].position;
-        enemy.player = player;
-        enemy.patrolPonts = patrolPonts;
+
         _enemies.Add(enemy);
         _timeLastSpawned = Time.time;
+        enemy.player = player;
+        enemy.patrolPonts = patrolPonts;
     }
 }
 
